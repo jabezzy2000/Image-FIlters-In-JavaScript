@@ -48,4 +48,23 @@ function blackbottom(imagename) {
     return image
     
 }
+//this function creates three blocks of red,green and blue equally across the width of the image
+function threeverticalstripes(imagename) {
+    var image = new SimpleImage(imagename)
+    var width = image.getWidth()
+    var onethird = width / 3
+    var twothird = onethird * 2
+    for(var i of image.values()){
+        if(i.getX() <= onethird){
+            i.setRed(255)
+        }
+        if (i.getX() >onethird && i.getX() <=twothird) {
+            i.setGreen(255)
+        }
+        if (i.getX() >twothird) {
+            i.setBlue(255)
+        }
+    }
+    return image
+}
 
